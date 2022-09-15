@@ -11,4 +11,8 @@ export const peopleTypes = [
     label: "Profesor",
     value: "profesor",
   },
+  {
+    label: "Estudiante y profesor",
+    value: "estudiante,profesor",
+  },
 ];

@@ -3,11 +3,13 @@ import Modal from '../modal/Modal'
 import { Row, Col, Form, Button } from "react-bootstrap"
 import { peopleTypes } from '../../data/people/filtersFields';
 import usePerson from '../../hooks/usePerson';
+import "./personEditModal.css";
 
 export default function PersonEditModal({
   show,
   data,
-  setModalConfig
+  setModalConfig,
+  setReload
 }) {
   const { handleEditPerson } = usePerson();
 
@@ -28,6 +30,7 @@ export default function PersonEditModal({
         show: false,
         data: null
       });
+      setReload(true);
     }
   };
 
@@ -56,8 +59,8 @@ export default function PersonEditModal({
           </Col>
           <Col md="12" className="my-2">
             <Form.Label>Roles</Form.Label>
-            <div className="d-flex gap-2">
-              {peopleTypes.filter((el) => el.value !== "").map((el) => (
+            <div className="d-flex gap-2 checkboxes">
+              {peopleTypes.filter((el) => !["", "estudiante,profesor"].includes(el.value)).map((el) => (
                 <Form.Check
                   key={el.value}
                   id={el.value}

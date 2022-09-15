@@ -27,3 +27,17 @@ export const apiPut = async (url, headers = {}, body = {}) => {
     throw error;
   }
 };
+
+export const apiDelete = async (url, headers = {}, body = {}) => {
+  try {
+    const response = await axios({
+      method: "delete",
+      url,
+      headers,
+      data: body,
+    });
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};

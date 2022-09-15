@@ -8,6 +8,7 @@ const personSchema = mongoose.Schema(
     fechaNacimiento: Date,
     cursos: [String],
     cursosDicta: [String],
+    roles: [String],
   },
   {
     collection: "personas_i_lima",

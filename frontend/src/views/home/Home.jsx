@@ -18,7 +18,7 @@ export default function Home() {
       <Header />
       <PeopleFilters filters={filters} setFilters={setFilters} setReload={setReload} />
       <PeopleList filters={filters} reload={reload} setReload={setReload} setModalConfig={setModalConfig} />
-      <PersonEditModal {...modalConfig} setModalConfig={setModalConfig} />
+      <PersonEditModal {...modalConfig} setModalConfig={setModalConfig} setReload={setReload} />
     </Container>
   )
 }

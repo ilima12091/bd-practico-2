@@ -25,7 +25,6 @@ export default function usePeople(filters, reload, setReload) {
           data: response,
         });
       } catch (error) {
-        console.log(error);
         setPeople({
           isLoading: false,
           error: true,

@@ -1,0 +1,5 @@
+.checkboxes .form-check,
+.checkboxes input,
+.checkboxes label {
+  cursor: pointer;
+}

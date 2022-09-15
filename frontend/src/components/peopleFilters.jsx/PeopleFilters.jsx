@@ -16,12 +16,12 @@ export default function PeopleFilters({ filters, setFilters, setReload }) {
   return (
     <Row className="border-bottom">
       <Col md="4" sm="12" className="my-3">
-        <Form.Select onChange={(e) => handleFilterChange("role", e.target.value)} value={filters.role}>
+        <Form.Select onChange={(e) => handleFilterChange("role", e.target.value)} value={filters.role || ""}>
           {peopleTypes.map((el) => <option key={el.value} value={el.value}>{el.label}</option>)}
         </Form.Select>
       </Col>
       <Col md="4" sm="12" className="my-3">
-        <Form.Control placeholder="Ingrese una cédula" type="number" value={filters.ci} onChange={(e) => handleFilterChange("ci", e.target.value)} />
+        <Form.Control placeholder="Ingrese una cédula" type="number" value={filters.ci || ""} onChange={(e) => handleFilterChange("ci", e.target.value)} />
       </Col>
       <Col md="4" className="d-flex align-items-center">
         <Button onClick={() => setReload(true)}>

@@ -1,7 +1,7 @@
 import React from "react";
 import { ButtonGroup, Button } from "react-bootstrap";
 
-const tableColumns = (handleEditPress) => [
+const tableColumns = (handleEditPress, handleDeletePress) => [
   {
     label: "Nombre",
     key: "name",
@@ -26,7 +26,9 @@ const tableColumns = (handleEditPress) => [
           <Button variant="primary" onClick={() => handleEditPress(row)}>
             Editar
           </Button>
-          <Button variant="danger">Eliminar</Button>
+          <Button variant="danger" onClick={() => handleDeletePress(row)}>
+            Eliminar
+          </Button>
         </ButtonGroup>
       );
     },
