@@ -1,0 +1,22 @@
+.table-container {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.table-container thead {
+  border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+}
+
+.table-container tr {
+  width: 100%;
+  display: flex;
+  margin: 0.5rem 0px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.table-container tr th,
+td {
+  flex: 1;
+}
