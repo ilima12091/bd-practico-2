@@ -1,16 +1,16 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 const people = require("./routes/people");
 const { APP_PORT, DB_URI } = require("./utils/consts");
+const { dbConnect } = require("./utils/mongodb");
 
-mongoose.connect(DB_URI, {
-  dbName: "personas_i_lima"
-}, () => {
-  console.log("Connected to mongoDB");
-});
+dbConnect();
 
 const app = express();
+
+app.use(cors());
 
 app.use("/people", people);
 
